@@ -1,0 +1,16 @@
+access_key = "XXXXX"
+secret_key = "YYYYYYYYY"
+region = "us-east-1"
+ttl = 30
+zone_id = "XXXXXXXXXX"
+hcloud_token = "CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC"
+hcloud_ssh_keys = ["samuele@nutellino.it"]
+hcloud_location = "nbg1"
+hcloud_type_nginxdemo= "cx11"
+image = "ubuntu-16.04"
+hosts_nginxdemo = 1
+hostname_format_nginxdemo = "nginxdemo-staging-%d"
+domain = "nutellino.it"
+apt_packages_nginxdemo = ["nginx"]
+hostame-demo= "demo.nutellino.it"
+reverse-demo= "http://localhost:81"
