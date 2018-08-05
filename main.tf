@@ -18,9 +18,9 @@ resource "hcloud_server" "host_nginxdemo" {
       "while fuser /var/lib/apt/lists/lock >/dev/null 2>&1; do sleep 1; done",
       "apt-get update",
       "apt-get install -yq ufw ${join(" ", var.apt_packages_nginxdemo)}",
-      "curl https://releases.demo.com/install-docker/17.03.2.sh | sh",
+      "curl https://releases.rancher.com/install-docker/17.03.2.sh | sh",
       "curl https://get.acme.sh | sh",
-      "docker run -d --restart=unless-stopped -p 81:80 wordpress"
+      "docker run -d --restart=unless-stopped -p 81:2368 ghost"
 
     ]
   }
@@ -50,7 +50,7 @@ resource "null_resource" "add-conf-nginx-demo" {
       "export  AWS_SECRET_ACCESS_KEY=${var.secret_key}",
       "sed -i 's/HOSTNAME/${var.hostame-demo}/g' /etc/nginx/conf.d/${var.hostame-demo}.conf",
       "sed -i 's#REVERSEURL#${var.reverse-demo}#g' /etc/nginx/conf.d/${var.hostame-demo}.conf",
-      "~/.acme.sh/acme.sh --issue --staging --dns dns_aws -d ${var.hostame-demo}",
+      "~/.acme.sh/acme.sh --issue ${var.lets-staging} --dns dns_aws -d ${var.hostame-demo}",
       "service nginx reload",
     ]
   }

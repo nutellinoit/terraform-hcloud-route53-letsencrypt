@@ -58,3 +58,9 @@ variable "hostame-demo" {
 }
 variable "reverse-demo" {
 }
+
+/*Let's encrypt*/
+
+variable lets-staging{
+
+}

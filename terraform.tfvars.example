@@ -1,16 +1,32 @@
+//Aws access and secret key
 access_key = "XXXXX"
 secret_key = "YYYYYYYYY"
+//Aws region, needed only for provisioner
 region = "us-east-1"
+//dns time to live
 ttl = 30
+//route 53 zone id
 zone_id = "XXXXXXXXXX"
+//hetzner cloud project token
 hcloud_token = "CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC"
+//ssh keys id saved on project
 hcloud_ssh_keys = ["samuele@nutellino.it"]
+//hetzner cloud location
 hcloud_location = "nbg1"
+//vm type
 hcloud_type_nginxdemo= "cx11"
+//image to launch on cloud
 image = "ubuntu-16.04"
+//number of machines , leave 1
 hosts_nginxdemo = 1
+//machine hostname
 hostname_format_nginxdemo = "nginxdemo-staging-%d"
 domain = "nutellino.it"
+//packages list to install on server
 apt_packages_nginxdemo = ["nginx"]
+//hostname added to route 53
 hostame-demo= "demo.nutellino.it"
+//reverse service based on template-vhosts.con
 reverse-demo= "http://localhost:81"
+//letsencrypt staging
+lets-staging="--staging"
