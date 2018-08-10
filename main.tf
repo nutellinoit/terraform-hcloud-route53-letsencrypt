@@ -23,6 +23,11 @@ resource "hcloud_server" "host_nginxdemo" {
       "docker run -d --restart=unless-stopped -p 81:2368 ghost"
 
     ]
+    connection {
+      type = "ssh"
+      user = "root"
+      private_key = "${file("~/.ssh/id_rsa")}"
+    }
   }
 
 
